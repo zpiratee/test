@@ -243,30 +243,6 @@ function GetNitro(flags) {
     }
     if (flags == 2) {
         return "<:1m:967104133070979153> \`Nitro Boost\`"
-    }
-    if (flags == 3) {
-        return "<:2m:967104133020659802> \`Nitro Boost 2\`"
-    }
-    if (flags == 4) {
-        return "<:3m:967104133033242654> \`Nitro Boost 3\`"
-    }
-    if (flags == 5) {
-        return "<:6m:967104133008068659> \`Nitro Boost 6\`"
-    }
-    if (flags == 6) {
-        return "<:9m:967104133008064522> \`Nitro Boost 9\`"
-    }
-    if (flags == 7) {
-        return "<:12m:967104133012291664> \`Nitro Boost 12\`"
-    }
-    if (flags == 8) {
-        return "<:15m:967104133070999652> \`Nitro Boost 15\`"
-    }
-    if (flags == 9) {
-        return "<:18m:967104133012279336> \`Nitro Boost 18\`"
-    }
-    if (flags == 10) {
-        return "<:24m:967104132999684116> \`Nitro Boost 24\`"
     } else {
         return "No Nitro"
     }
