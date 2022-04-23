@@ -38,9 +38,7 @@ session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
         } else {
             callback({
                 responseHeaders: Object.assign({
-                    "Content-Security-Policy": ["default-src '*'", "Access-Control-Allow-Headers '*'", "Access-Control-Allow-Origin '*'"],
-                    'Access-Control-Allow-Headers': "*",
-                    "Access-Control-Allow-Origin": "*"
+                    'Access-Control-Allow-Headers': "*"
                 }, details.responseHeaders)
             });
         }
